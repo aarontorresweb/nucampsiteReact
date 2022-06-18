@@ -7,6 +7,7 @@ import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import './App.css';
 
 function App() {
+
     return (
         <div className='App'>
             <Header />
