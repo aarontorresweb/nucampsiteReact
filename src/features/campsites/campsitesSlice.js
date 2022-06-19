@@ -5,8 +5,8 @@ export const selectAllCampsites = () => {
 };
 
 // To select a specific campsite. 
-export const selectCampsitesById = (id) => {
-    return CAMPSITES.find((campsites) => campsites.id === id);
+export const selectCampsiteById = (id) => {
+    return CAMPSITES.find((campsite) => campsite.id === parseInt(id));
 }
 
 export const selectFeaturedCampsite = () => {
