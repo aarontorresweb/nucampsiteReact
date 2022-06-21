@@ -1,4 +1,5 @@
 import { Col, Row, Container, Card, CardBody, CardHeader} from 'reactstrap';
+import PartnersList from '../../src/features/partners/PartnersList';
 
 const AboutPage = () => {
     return(
@@ -59,6 +60,7 @@ const AboutPage = () => {
                 <Col xs='12'>   
                     <h3>Community Partners</h3>
                 </Col>
+                <PartnersList />
             </Row>
         </Container>
     )

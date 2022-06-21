@@ -5,7 +5,11 @@ import { selectFeaturedPromotion } from '../promotions/PromotionsSlice';
 import { selectFeaturedPartner } from '../partners/PartnersSlice';
 
 const DisplayList = () => {
-    const items = [selectFeaturedCampsite(), selectFeaturedPromotion()];
+    const items = [selectFeaturedCampsite(), selectFeaturedPromotion(), selectFeaturedPartner()];
+    // When I use the code below for the 'items' array, I get a 
+    // 'TypeError: Cannot destructure property 'image' of 'item' as it is undefined.' message in the console.
+    // const items = [selectFeaturedCampsite(), selectFeaturedPromotion(), selectFeaturedPartner()];
+
     return (
         <Row>
             {items.map((item, idx) => {
