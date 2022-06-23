@@ -21,7 +21,6 @@ const PartnersList = () => {
         </Col>
     );
 }
-
         // // This is the broken function that I had trouble with. 
         // // I left it in just for comparison and perhaps understanding later what is wrong with it.
         // {
