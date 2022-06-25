@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from 'reactstrap';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { validateCommentForm } from '../../utils/validateCommentForm';
 
 const CommentForm = ( {campsiteId} ) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -13,6 +14,8 @@ const CommentForm = ( {campsiteId} ) => {
             author: values.author,
             text: values.commentText     
         }
+        console.log('Form values: ', comment);
+        console.log('in JSON format: ', JSON.stringify(comment));
         setModalOpen(false);
     };
     
@@ -26,7 +29,65 @@ const CommentForm = ( {campsiteId} ) => {
                     Add Comment
                 </ModalHeader>
                 <ModalBody>
-                    campsite: {campsiteId}
+                    <Formik initialValues={{
+                        rating: 'undefined',
+                        author: '',
+                        commentText: '',
+                    }}
+                    onSubmit={ handleSubmit }
+                    validate={ validateCommentForm }
+                    >
+                        <Form>
+                            <FormGroup>
+                                <Label htmlFor='rating'>
+                                    Rating
+                                </Label>
+                                <Field
+                                    name='rating'
+                                    as='select'
+                                    className='form-control'
+                                >
+                                    <option>Select...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </Field>
+                                <ErrorMessage name='rating'>
+                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
+                            </FormGroup>
+                            <FormGroup htmlFor='author'>
+                                <Label>
+                                    Your Name
+                                </Label>
+                                <Field
+                                    name='author'
+                                    placeholder='Your Name'
+                                    className='form-control'
+                                />
+                                <ErrorMessage name='author'>
+                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
+                            </FormGroup>
+                            <FormGroup htmlFor="commentText">
+                                <Label>
+                                    Comment
+                                </Label>
+                                <Field
+                                    name='commentText'
+                                    as='textarea'
+                                    rows='12'
+                                    className='form-control'
+                                />
+                            </FormGroup>
+                            <Button type='submit' color='primary'>
+                                Submit
+                            </Button>
+                        </Form>
+                    </Formik>
+
                 </ModalBody>
             </Modal>
         </>
