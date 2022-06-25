@@ -3,7 +3,7 @@ import { Col, Row } from 'reactstrap';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import { selectFeaturedCampsite } from '../campsites/CampsitesSlice';
 import { selectFeaturedPromotion } from '../promotions/PromotionsSlice';
-import { selectFeaturedPartner } from '../partners/PartnersSlice';
+import { selectFeaturedPartner } from '../partners/partnersSlice';
 
 const DisplayList = () => {
     const items = [selectFeaturedCampsite(), selectFeaturedPromotion(), selectFeaturedPartner()];

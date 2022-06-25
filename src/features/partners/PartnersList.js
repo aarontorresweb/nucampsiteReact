@@ -1,6 +1,6 @@
 import { Col } from 'reactstrap';
 import Partner from '../../components/Partner.js';
-import { selectAllPartners } from '../partners/PartnersSlice';
+import { selectAllPartners } from './partnersSlice';
 
 const PartnersList = () => {
     const partners = selectAllPartners();
