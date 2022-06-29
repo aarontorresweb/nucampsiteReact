@@ -22,7 +22,8 @@ const CommentForm = ( {campsiteId} ) => {
     return (
         <>
             <Button outline onClick={() => setModalOpen(true)}>
-                <i className='fa fa-pencil fa-lg'> Add Comment </i>
+                <i className='fa fa-pencil fa-lg' /> 
+                Add Comment
             </Button>
             <Modal isOpen={modalOpen}>
                 <ModalHeader toggle={() => setModalOpen(false)}>
@@ -30,7 +31,7 @@ const CommentForm = ( {campsiteId} ) => {
                 </ModalHeader>
                 <ModalBody>
                     <Formik initialValues={{
-                        rating: 'undefined',
+                        rating: undefined,
                         author: '',
                         commentText: '',
                     }}
