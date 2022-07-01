@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux';
 import { Col } from 'reactstrap';
 import Partner from '../../components/Partner.js';
 import { selectAllPartners } from './partnersSlice';
 
 const PartnersList = () => {
-    const partners = selectAllPartners();
+    const partners = useSelector(selectAllPartners);
     console.log(partners);
     console.log(partners[2].id);
 

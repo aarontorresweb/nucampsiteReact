@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { CAMPSITES } from '../../app/shared/CAMPSITES'
 import { Col, Row } from 'reactstrap'
 import CampsiteCard from "./CampsiteCard"
-import { selectAllCampsites } from './CampsitesSlice';
+import { selectAllCampsites } from './campsitesSlice';
 
 const CampsitesList = () => {
     const campsites = useSelector(selectAllCampsites);
