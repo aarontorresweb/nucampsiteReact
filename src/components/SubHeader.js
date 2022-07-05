@@ -1,7 +1,7 @@
 import { Col, Row, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const subHeader = ({ current, detail }) => {
+const SubHeader = ({ current, detail }) => {
     return (
         <Row>
         <Col>
@@ -23,4 +23,4 @@ const subHeader = ({ current, detail }) => {
     );
 };
 
-export default subHeader;
+export default SubHeader;
