@@ -9,7 +9,7 @@ import {
     Label,
     Button
 } from 'reactstrap';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import defaultAvatar from '../../app/assets/img/unicorn.png';
 import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 
@@ -31,7 +31,7 @@ const UserLoginForm = () => {
 
     return (
         <>
-            <span className='navbar-text-ml-auto'>
+            <span className='navbar-text ml-auto'>
                 {currentUser ? (
                     <div style={{ width: '4rem', height: '4rem' }}>
                         <img
@@ -69,7 +69,7 @@ const UserLoginForm = () => {
                                 <Field 
                                     id='username'
                                     name='username'
-                                    placeholder='username'
+                                    placeholder='Username'
                                     className='form-control'
                                 />
                                 <ErrorMessage name='username'>
@@ -83,20 +83,20 @@ const UserLoginForm = () => {
                                 <Field 
                                     id='password'
                                     name='password'
-                                    placeholder='Password
+                                    placeholder='Password'
                                     className='form-control'
                                 />
-                                <ErrorMessage name='username'>
+                                <ErrorMessage name='password'>
                                     {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
-                        </Form>
-                        <Button type='submit' color='primary'>
+                            <Button type='submit' color='primary'>
                             Login
-                        </Button>
+                            </Button>
+                        </Form>
                         </Formik>
                     </ModalBody>
-            </Modal
+            </Modal>
         </>
     );
 };
