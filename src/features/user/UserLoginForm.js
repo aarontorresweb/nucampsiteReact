@@ -58,7 +58,7 @@ const UserLoginForm = () => {
                         <Formik initialValues={{
                             username: '',
                             password: '',
-                        }} onSubmiit = {handleLogin}
+                        }} onSubmit = {handleLogin}
                             validate = {validateUserLoginForm}
                         >
                         <Form>
